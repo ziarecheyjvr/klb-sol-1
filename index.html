@@ -197,32 +197,17 @@ a{color:inherit;text-decoration:none}
 .estate .grid p{color:#c9c7bf;grid-column:3}
 .estate .grid .big{grid-column:2;font-size:clamp(22px,2.2vw,30px);line-height:1.25;font-weight:500}
 .estate .g2{color:var(--green)}
-.files{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;padding:0 var(--pad)}
-.file{position:relative;background:#f6f5f0;color:var(--ink);padding:22px 22px 28px;min-height:300px;display:flex;flex-direction:column;transform:rotate(var(--r,0deg));transition:transform .4s cubic-bezier(.2,.7,.2,1);box-shadow:6px 6px 0 #000}
-.file:nth-child(1){--r:-1.2deg}.file:nth-child(2){--r:.8deg}.file:nth-child(3){--r:-.5deg}
-.file:hover{transform:rotate(0) translateY(-6px)}
-.file .fh{display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1.5px solid var(--ink);color:var(--ink-2)}
-.file h4{font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(28px,2.6vw,40px);line-height:.95;margin:28px 0 24px}
-.file dl{display:grid;grid-template-columns:90px 1fr;gap:12px 10px;align-items:center;margin-top:auto}
-.file dt{color:var(--soft)}
-.file dd i{display:block;height:13px;background:var(--ink)}
-.file .seal{position:absolute;right:18px;bottom:22px;transform:rotate(-10deg);border:2px solid var(--green-ink);color:var(--green-ink);padding:6px 10px;font-weight:500}
-.promise{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;padding:36px var(--pad) 44px;background:var(--green);color:var(--ink)}
-.promise p{max-width:72ch;font-size:16.5px;margin-top:12px}
+.estate .grid.second{margin-top:32px;padding-top:32px;border-top:1.5px solid #3a3a37}
+.estate .grid.second p{grid-column:auto;color:#c9c7bf}
+.estate .grid.second p:first-of-type{grid-column:2}
+.promise{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:56px;padding:28px var(--pad);background:var(--green);color:var(--ink)}
 .visit{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);padding:16px 22px;font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:15px;white-space:nowrap}
 .visit svg{width:10px;height:14px}
 .visit:hover{background:var(--paper);color:var(--ink)}
-.pillars{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1.5px solid #3a3a37}
-.pillars div{padding:28px var(--pad);border-right:1.5px solid #3a3a37}
-.pillars div:last-child{border-right:0}
-.pillars .mono{color:var(--green)}
-.pillars h4{font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:18px;margin:16px 0 6px}
-.pillars p{color:#a9a79f;font-size:15px}
 @media (max-width:900px){
   .estate .grid{grid-template-columns:1fr}.estate .grid p,.estate .grid .big{grid-column:auto}
-  .files{grid-template-columns:1fr}.file{min-height:260px}.promise{grid-template-columns:1fr}
-  .pillars{grid-template-columns:1fr 1fr}.pillars div:nth-child(2){border-right:0}.pillars div:nth-child(-n+2){border-bottom:1.5px solid #3a3a37}
-}
+  .estate .grid.second p:first-of-type{grid-column:auto}
+  }
 
 /* ---------- commodities manifest ---------- */
 .manifest{margin:0 var(--pad);border:1.5px solid var(--rule)}
@@ -410,8 +395,8 @@ footer{margin-top:120px;border-top:1.5px solid var(--rule)}
       <a href="#estate" class="row">
         <span class="num mono">03 / Real Estate</span>
         <h3 class="c">Prime Property</h3>
-        <div><p>Premium residences and investments worldwide for high-net-worth buyers — often off-market, through trusted local agents.</p>
-          <div class="tags">Villas · Apartments · UK Luxury · Investments</div></div>
+        <div><p>We specialise in sourcing premium properties worldwide, ensuring access to the most desirable investments and residences.</p>
+          <div class="tags">Off-market · Investments · Residences</div></div>
         <span class="go"><svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 1l8 7-8 7"/></svg></span>
       </a>
       <a href="#commodities" class="row">
@@ -435,19 +420,18 @@ footer{margin-top:120px;border-top:1.5px solid var(--rule)}
       <ol class="legend">
         <li><span class="k hq-k"></span><b>Dubai</b><span>HQ · Silicon Oasis</span></li>
         <li><span class="k">1</span><b>London · UK</b><span>5,473 km</span></li>
-        <li><span class="k">2</span><b>Southern Europe · property</b><span>5,785 km</span></li>
-        <li><span class="k">3</span><b>ASEAN · trade</b><span>5,837 km</span></li>
+        <li><span class="k">2</span><b>ASEAN · trade</b><span>5,837 km</span></li>
       </ol>
     </div>
     <div class="map">
-      <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Range chart centred on Dubai: London 5,473 km, southern Europe 5,785 km, ASEAN 5,837 km">
+      <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Range chart centred on Dubai: London 5,473 km and ASEAN 5,837 km">
         <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#54b857" stop-opacity="0"/><stop offset="1" stop-color="#54b857" stop-opacity=".4"/></linearGradient></defs>
         <circle cx="300" cy="300" r="200" class="disc"/>
         <g class="sweep"><path d="M300 300 L300 100 A200 200 0 0 1 400 126.8 Z" fill="url(#sweep)"/><line x1="300" y1="300" x2="400" y2="126.8" class="beam"/></g>
         <circle cx="300" cy="300" r="55.4" class="ring"/><circle cx="300" cy="300" r="110.8" class="ring"/><circle cx="300" cy="300" r="166.2" class="ring"/>
         <g class="ticks"><line x1="300.0" y1="100.0" x2="300.0" y2="110.0" class="big"/><line x1="334.7" y1="103.0" x2="334.0" y2="107.0"/><line x1="368.4" y1="112.1" x2="367.0" y2="115.8"/><line x1="400.0" y1="126.8" x2="395.0" y2="135.5" class="big"/><line x1="428.6" y1="146.8" x2="426.0" y2="149.9"/><line x1="453.2" y1="171.4" x2="450.1" y2="174.0"/><line x1="473.2" y1="200.0" x2="464.5" y2="205.0" class="big"/><line x1="487.9" y1="231.6" x2="484.2" y2="233.0"/><line x1="497.0" y1="265.3" x2="493.0" y2="266.0"/><line x1="500.0" y1="300.0" x2="490.0" y2="300.0" class="big"/><line x1="497.0" y1="334.7" x2="493.0" y2="334.0"/><line x1="487.9" y1="368.4" x2="484.2" y2="367.0"/><line x1="473.2" y1="400.0" x2="464.5" y2="395.0" class="big"/><line x1="453.2" y1="428.6" x2="450.1" y2="426.0"/><line x1="428.6" y1="453.2" x2="426.0" y2="450.1"/><line x1="400.0" y1="473.2" x2="395.0" y2="464.5" class="big"/><line x1="368.4" y1="487.9" x2="367.0" y2="484.2"/><line x1="334.7" y1="497.0" x2="334.0" y2="493.0"/><line x1="300.0" y1="500.0" x2="300.0" y2="490.0" class="big"/><line x1="265.3" y1="497.0" x2="266.0" y2="493.0"/><line x1="231.6" y1="487.9" x2="233.0" y2="484.2"/><line x1="200.0" y1="473.2" x2="205.0" y2="464.5" class="big"/><line x1="171.4" y1="453.2" x2="174.0" y2="450.1"/><line x1="146.8" y1="428.6" x2="149.9" y2="426.0"/><line x1="126.8" y1="400.0" x2="135.5" y2="395.0" class="big"/><line x1="112.1" y1="368.4" x2="115.8" y2="367.0"/><line x1="103.0" y1="334.7" x2="107.0" y2="334.0"/><line x1="100.0" y1="300.0" x2="110.0" y2="300.0" class="big"/><line x1="103.0" y1="265.3" x2="107.0" y2="266.0"/><line x1="112.1" y1="231.6" x2="115.8" y2="233.0"/><line x1="126.8" y1="200.0" x2="135.5" y2="205.0" class="big"/><line x1="146.8" y1="171.4" x2="149.9" y2="174.0"/><line x1="171.4" y1="146.8" x2="174.0" y2="149.9"/><line x1="200.0" y1="126.8" x2="205.0" y2="135.5" class="big"/><line x1="231.6" y1="112.1" x2="233.0" y2="115.8"/><line x1="265.3" y1="103.0" x2="266.0" y2="107.0"/></g><text x="300.0" y="84.0" text-anchor="middle" class="card">N</text><text x="522.0" y="306.0" text-anchor="middle" class="card">E</text><text x="300.0" y="528.0" text-anchor="middle" class="card">S</text><text x="78.0" y="306.0" text-anchor="middle" class="card">W</text>
-        <path class="arc" id="r1" d="M300 300 Q268.8 225.8 197.4 188.4"/><circle r="4" class="mover"><animateMotion dur="3.5s" begin="0.7s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle><path class="arc" id="r2" d="M300 300 Q242.6 237.1 158.3 225.3"/><circle r="4" class="mover"><animateMotion dur="4.0s" begin="1.4s" repeatCount="indefinite"><mpath href="#r2"/></animateMotion></circle><path class="arc" id="r3" d="M300 300 Q366.8 354.1 452.6 353.2"/><circle r="4" class="mover"><animateMotion dur="4.5s" begin="2.0999999999999996s" repeatCount="indefinite"><mpath href="#r3"/></animateMotion></circle>
-        <g class="mark"><circle cx="197.4" cy="188.4" r="15"/><text x="197.4" y="194.4" text-anchor="middle">1</text></g><g class="mark"><circle cx="158.3" cy="225.3" r="15"/><text x="158.3" y="231.3" text-anchor="middle">2</text></g><g class="mark"><circle cx="452.6" cy="353.2" r="15"/><text x="452.6" y="359.2" text-anchor="middle">3</text></g>
+        <path class="arc" id="r1" d="M300 300 Q268.8 225.8 197.4 188.4"/><circle r="4" class="mover"><animateMotion dur="3.5s" begin="0.7s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle><path class="arc" id="r3" d="M300 300 Q366.8 354.1 452.6 353.2"/><circle r="4" class="mover"><animateMotion dur="4.5s" begin="2.0999999999999996s" repeatCount="indefinite"><mpath href="#r3"/></animateMotion></circle>
+        <g class="mark"><circle cx="197.4" cy="188.4" r="15"/><text x="197.4" y="194.4" text-anchor="middle">1</text></g><g class="mark"><circle cx="452.6" cy="353.2" r="15"/><text x="452.6" y="359.2" text-anchor="middle">2</text></g>
         <circle class="pulse" cx="300" cy="300" r="14"/><circle class="hq" cx="300" cy="300" r="11"/>
       </svg>
     </div>
@@ -489,45 +473,19 @@ footer{margin-top:120px;border-top:1.5px solid var(--rule)}
 
   <!-- REAL ESTATE -->
   <section class="estate" id="estate">
-    <div class="sec-h up"><span class="mono">§ 03 — Real Estate · Worldwide</span><h2 class="x">Sourced worldwide.<br><span class="g2">Not on the market.</span></h2></div>
+    <div class="sec-h up"><span class="mono">§ 03 — Real Estate</span><h2 class="x">Real <span class="g2">Estate.</span></h2></div>
     <div class="grid">
       <div></div>
       <p class="big up">At KLB Solutions, our real estate division is dedicated to serving high-net-worth buyers who are seeking exceptional opportunities. We specialise in sourcing premium properties worldwide, ensuring access to the most desirable investments and residences.</p>
       <p class="up">Through our trusted network of established local agents, built over years of collaboration, we uncover opportunities that are often off-market and unavailable to the wider public. This allows us to present our clients with exclusive options that align with their lifestyle, investment strategy, and long-term goals.</p>
     </div>
-    <!-- Listings are shared privately: show them as restricted files -->
-    <div class="files up">
-      <article class="file">
-        <div class="fh mono"><span>File KLB/RE-01</span><span>Restricted</span></div>
-        <h4>Villas</h4>
-        <dl class="mono"><dt>Region</dt><dd>Worldwide</dd><dt>Price</dt><dd><i style="width:45%"></i></dd><dt>Status</dt><dd>Off-market</dd></dl>
-        <span class="seal mono">On request</span>
-      </article>
-      <article class="file">
-        <div class="fh mono"><span>File KLB/RE-02</span><span>Restricted</span></div>
-        <h4>Apartments</h4>
-        <dl class="mono"><dt>Region</dt><dd>Worldwide</dd><dt>Price</dt><dd><i style="width:60%"></i></dd><dt>Status</dt><dd>Off-market</dd></dl>
-        <span class="seal mono">On request</span>
-      </article>
-      <article class="file">
-        <div class="fh mono"><span>File KLB/RE-03</span><span>Restricted</span></div>
-        <h4>UK Luxury</h4>
-        <dl class="mono"><dt>Region</dt><dd>United Kingdom</dd><dt>Price</dt><dd><i style="width:50%"></i></dd><dt>Status</dt><dd>Off-market</dd></dl>
-        <span class="seal mono">On request</span>
-      </article>
-    </div>
-    <div class="pillars">
-      <div><span class="mono">i.</span><h4>Access</h4><p>Off-market opportunities through established local agents worldwide.</p></div>
-      <div><span class="mono">ii.</span><h4>Negotiation</h4><p>We negotiate the best possible deal on your behalf.</p></div>
-      <div><span class="mono">iii.</span><h4>Insight</h4><p>Detailed market insight and a seamless transaction, start to finish.</p></div>
-      <div><span class="mono">iv.</span><h4>Aftercare</h4><p>Resources and connections to maximise your investment after purchase.</p></div>
+    <div class="grid second">
+      <div></div>
+      <p class="up">Our role goes beyond property sourcing. We negotiate the best possible deals on behalf of our clients, provide detailed market insights, and ensure a seamless transaction process from start to finish. Post-purchase, our team remains a reliable partner, supporting clients with the resources and connections they need to maximize their investment.</p>
+      <p class="up">At KLB Solutions, we act as your global real estate partner focused on discretion, access, and value. For high-net-worth buyers, we deliver more than properties; we deliver opportunities tailored to your vision.</p>
     </div>
     <div class="promise up">
-      <div>
-        <span class="mono">Worldwide · Discretion · Access · Value</span>
-        <p>Our role goes beyond property sourcing. We negotiate the best possible deals on behalf of our clients, provide detailed market insights, and ensure a seamless transaction process from start to finish. Post-purchase, our team remains a reliable partner, supporting clients with the resources and connections they need to maximize their investment.</p>
-        <p>At KLB Solutions, we act as your global real estate partner focused on discretion, access, and value. For high-net-worth buyers, we deliver more than properties; we deliver opportunities tailored to your vision.</p>
-      </div>
+      <span class="mono">Discretion · Access · Value</span>
       <a class="visit" href="#contact">Request details
         <svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2 1l8 7-8 7"/></svg></a>
     </div>
@@ -588,7 +546,6 @@ footer{margin-top:120px;border-top:1.5px solid var(--rule)}
           <span class="mono">Property type</span>
           <label><input type="radio" name="property" value="Villa" checked><span>Villa</span></label>
           <label><input type="radio" name="property" value="Apartment"><span>Apartment</span></label>
-          <label><input type="radio" name="property" value="UK Luxury"><span>UK Luxury</span></label>
         </div>
       </fieldset>
       <div class="fields">
