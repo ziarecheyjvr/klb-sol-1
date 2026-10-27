@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KLB Solutions — Marketing, AI, Real Estate & Commodities | Dubai</title>
+<meta name="description" content="KLB Solutions FZCO is a Dubai-based connector across marketing, AI (Worldie.ai), off-market real estate (KLB Homes) and commodities facilitation.">
+<meta property="og:title" content="KLB Solutions — Connecting you to success">
+<meta property="og:description" content="Marketing, AI, real estate and commodities — one network, run from Dubai Silicon Oasis.">
+<meta property="og:image" content="assets/img/logo.png">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ecebe4; --paper-2:#e3e1d8; --ink:#141414; --ink-2:#3a3a37; --rule:#141414; --soft:#8a8880;
+  --green:#54b857; --green-ink:#2f7d33;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --sans:"Archivo",system-ui,sans-serif;
+  --pad:clamp(16px,3vw,40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* faint paper grain */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.35;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.x{font-stretch:125%;font-weight:800;letter-spacing:-.02em;line-height:.88;text-transform:uppercase}
+.c{font-stretch:62%;font-weight:700;letter-spacing:-.01em;line-height:.9;text-transform:uppercase}
+.g{color:var(--green-ink)}
+.frame{padding:0 var(--pad)}
+.rule{border-top:1.5px solid var(--rule)}
+
+/* ---------- masthead ---------- */
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:14px var(--pad);border-bottom:1.5px solid var(--rule);position:sticky;top:0;z-index:40;background:var(--paper)}
+.top .mono{color:var(--ink-2)}
+.top nav{display:flex;gap:22px}
+.top nav a{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;position:relative}
+.top nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1.5px;background:var(--ink);transition:right .3s}
+.top nav a:hover::after{right:0}
+.top .logo img{height:28px;width:auto}
+.top .right{display:flex;justify-content:flex-end;align-items:center;gap:18px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:11px 16px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;transition:background .2s,color .2s}
+.cta:hover{background:var(--green);color:var(--ink)}
+.cta .chev{width:9px;height:12px}
+.menu{display:none;font-family:var(--mono);font-size:12px;background:none;border:1.5px solid var(--ink);padding:8px 10px;text-transform:uppercase;cursor:pointer;color:var(--ink)}
+@media (max-width:900px){
+  .top{grid-template-columns:auto 1fr}
+  .top .logo{order:-1}
+  .top nav,.top .right .mono,.top .right .cta{display:none}
+  .menu{display:block}
+  .top.open nav{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1.5px solid var(--ink);padding:20px var(--pad);gap:16px}
+}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;border-bottom:1.5px solid var(--rule);min-height:calc(100svh - 58px)}
+.hero-l{padding:28px var(--pad) 32px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;border-right:1.5px solid var(--rule)}
+.hero-meta{display:flex;justify-content:space-between;gap:16px;color:var(--ink-2)}
+.hero h1{font-size:clamp(38px,9.2vw,148px)}
+.hero h1 .ln{display:flex;align-items:center;gap:.12em}
+.hero h1 svg{height:.78em;width:auto;flex:none}
+.hero-foot{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+.hero-foot p{max-width:46ch;font-size:18px;color:var(--ink-2)}
+.hero-r{position:relative;overflow:hidden}
+.hero-r{background:var(--paper)}
+.hero-r .switch{position:absolute;inset:0;width:100%;height:100%;overflow:visible;background:var(--ink);clip-path:polygon(22% 0,100% 0,100% 100%,22% 100%,0 50%);animation:open 1.4s cubic-bezier(.7,0,.2,1) both}
+.switch .wires path{fill:none;stroke:#ecebe4;stroke-opacity:.55;stroke-width:1.5}
+.switch .labels text{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.04em;fill:#ecebe4}
+.switch .you{font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:40px;fill:#ecebe4}
+@keyframes open{from{clip-path:polygon(100% 0,100% 0,100% 100%,100% 100%,78% 50%)}}
+.hero-r .tag{position:absolute;right:16px;bottom:16px;background:var(--paper);padding:8px 10px;z-index:2}
+.hero-r .coord{position:absolute;right:16px;top:16px;color:var(--paper);z-index:2}
+.hero-r .tag{border:1.5px solid var(--ink)}
+@media (max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);min-height:0}
+  .hero-l{border-right:0;border-bottom:1.5px solid var(--rule)}
+  .hero-r{aspect-ratio:1}.hero-r .coord{display:none}
+  .hero-foot{grid-template-columns:1fr}
+}
+
+/* ---------- ticker-style strip ---------- */
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1.5px solid var(--rule)}
+.strip div{padding:18px var(--pad);border-right:1.5px solid var(--rule);display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.strip div:last-child{border-right:0}
+.strip b{font-stretch:125%;font-weight:800;font-size:clamp(14px,2vw,22px);text-transform:uppercase;min-width:0;overflow-wrap:anywhere}
+@media (max-width:900px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}.strip div:nth-child(2){border-right:0}.strip div:nth-child(-n+2){border-bottom:1.5px solid var(--rule)}}
+
+/* ---------- section header ---------- */
+.sec{padding:96px 0 0}
+.sec-h{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:0 var(--pad) 28px;align-items:start}
+.sec-h .mono{padding-top:10px}
+.sec-h h2{font-size:clamp(40px,6.4vw,104px)}
+@media (max-width:700px){.sec-h{grid-template-columns:1fr;gap:12px}}
+
+/* ---------- about / manifesto ---------- */
+.manifesto{display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;padding:28px var(--pad) 0}
+.manifesto .lead{font-size:clamp(24px,2.6vw,36px);line-height:1.18;font-weight:500;letter-spacing:-.01em;grid-column:2/4;max-width:28ch}
+.manifesto .lead em{font-style:normal;background:var(--green);padding:0 .15em}
+.manifesto p.body{color:var(--ink-2);grid-column:2/3}
+.manifesto p.body+p.body{grid-column:3/4}
+@media (max-width:900px){.manifesto{grid-template-columns:1fr}.manifesto .lead,.manifesto p.body,.manifesto p.body+p.body{grid-column:auto}}
+
+/* ---------- divisions index ---------- */
+.index{margin-top:72px;border-top:1.5px solid var(--rule)}
+.row{display:grid;grid-template-columns:200px 1.4fr 1fr 48px;gap:24px;align-items:center;padding:26px var(--pad);border-bottom:1.5px solid var(--rule);position:relative;transition:background .35s,color .35s}
+.row h3{font-size:clamp(36px,5vw,76px)}
+.row p{color:var(--ink-2);font-size:15.5px;max-width:44ch;transition:color .35s}
+.row .tags{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;margin-top:10px;color:var(--soft);transition:color .35s}
+.row .go{width:48px;height:48px;border:1.5px solid currentColor;display:grid;place-items:center;transition:transform .35s}
+.row .go svg{width:12px;height:16px}
+.row:hover{background:var(--ink);color:var(--paper)}
+.row:hover p{color:#c9c7bf}
+.row:hover .tags{color:var(--green)}
+.row:hover .go{transform:translateX(6px);background:var(--green);color:var(--ink);border-color:var(--green)}
+@media (max-width:900px){.row{grid-template-columns:1fr auto;gap:12px}.row .num{grid-column:1/-1}.row>div:nth-of-type(2){grid-column:1/-1}.row .go{grid-row:2;grid-column:2}}
+
+/* ---------- network map ---------- */
+.network{display:grid;grid-template-columns:1fr 2fr;border-block:1.5px solid var(--rule);margin-top:96px}
+.network .side{padding:32px var(--pad);border-right:1.5px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.network .side h2{font-size:clamp(40px,4.6vw,72px)}
+.network .side p{color:var(--ink-2);max-width:40ch}
+.map{position:relative;display:grid;place-items:center;padding:24px;background:var(--paper-2);
+  background-image:radial-gradient(circle,rgba(20,20,20,.18) 1.1px,transparent 1.2px);background-size:16px 16px}
+.map svg{width:100%;max-width:560px;height:auto;display:block}
+.map .disc{fill:var(--paper);stroke:var(--ink);stroke-width:2}
+.map .ring{fill:none;stroke:var(--ink);stroke-opacity:.3;stroke-dasharray:2 5}
+.map .ticks line{stroke:var(--ink);stroke-width:1.2}
+.map .ticks line.big{stroke-width:2}
+.map .card{font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:18px;fill:var(--ink)}
+.map .sweep{transform-origin:300px 300px;animation:spin 9s linear infinite}
+.map .beam{stroke:var(--green-ink);stroke-width:1.5}
+.map .arc{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-dasharray:6 6;animation:dash 30s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-600}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.map .mover{fill:var(--green-ink)}
+.map .mark circle{fill:var(--ink)}
+.map .mark text{font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:17px;fill:var(--paper)}
+.map .hq{fill:var(--green);stroke:var(--ink);stroke-width:2.5}
+.map .pulse{fill:none;stroke:var(--green-ink);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{from{transform:scale(.6);opacity:1}to{transform:scale(2.6);opacity:0}}
+.legend{list-style:none;border-top:1.5px solid var(--rule)}
+.legend li{display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1.5px solid var(--rule)}
+.legend .k{width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-stretch:125%;font-weight:800;font-size:13px}
+.legend .hq-k{background:var(--green);border:2px solid var(--ink)}
+.legend b{font-weight:600;font-size:16px}
+.legend li>span:last-child{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-transform:uppercase}
+@media (max-width:900px){.network{grid-template-columns:1fr}.network .side{border-right:0;border-bottom:1.5px solid var(--rule)}}
+
+/* ---------- AI ---------- */
+.ai{display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;padding:0 var(--pad)}
+.ai .bot{grid-column:2;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;align-self:start;box-shadow:10px 10px 0 var(--green)}
+.ai .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-bottom:1.5px solid #333}
+.ai .bar .lights{display:flex;gap:6px}
+.ai .bar .lights i{width:9px;height:9px;border-radius:50%;border:1.5px solid #6b6a64}
+.ai .bar .lights i:first-child{background:var(--green);border-color:var(--green)}
+.ai .bar .live{color:var(--green);animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.35}}
+.ai .stage{position:relative;aspect-ratio:1;display:grid;place-items:center;overflow:hidden;
+  background-image:radial-gradient(circle,rgba(236,235,228,.13) 1.2px,transparent 1.3px);background-size:20px 20px}
+.ai .globe{width:54%;position:relative;z-index:1;overflow:visible;animation:float 6s ease-in-out infinite}
+.ai .globe .lat ellipse,.ai .globe .mer ellipse{fill:none;stroke:#ecebe4;stroke-opacity:.38;stroke-width:.8}
+.ai .globe .rim{fill:none;stroke:#ecebe4;stroke-width:1.6}
+.ai .globe .links path{fill:none;stroke:#54b857;stroke-width:1.2;stroke-dasharray:3 3;animation:dash 20s linear infinite}
+.ai .globe .nodes circle{fill:#ecebe4;stroke:var(--ink);stroke-width:1.5}
+.ai .globe .nodes .core{fill:#54b857}
+.ai .globe .ping{fill:none;stroke:#54b857;stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.ai .orbit{position:absolute;border-radius:50%}
+.ai .o1{inset:13%;border:1.5px dashed rgba(236,235,228,.3);animation:spin 60s linear infinite}
+.ai .o2{inset:26%;border:1px solid rgba(84,184,87,.45);animation:spin 14s linear infinite reverse}
+.ai .o2 i{position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(84,184,87,.2)}
+.ai .sat{position:absolute;width:0;height:0}
+.ai .sat>span{display:block;width:0;height:0;animation:spin 60s linear infinite reverse}
+.ai .sat b{display:inline-block;transform:translate(-50%,-50%);white-space:nowrap;font-family:var(--mono);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;background:var(--paper);color:var(--ink);padding:5px 9px;border:1.5px solid var(--ink)}
+.ai .sat:nth-child(odd) b{background:var(--green)}
+.ai .term{border-top:1.5px solid #333;padding:14px;min-height:96px;font-size:12px;line-height:1.7;text-transform:none;color:#c9c7bf}
+.ai .term .ok{color:var(--green)}
+.ai .term .cur{display:inline-block;width:7px;height:13px;background:var(--green);vertical-align:-2px;animation:blink 1s steps(2) infinite}
+.ai ol{list-style:none;grid-column:3;border-top:1.5px solid var(--rule);align-self:start}
+.ai li{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:22px 0;border-bottom:1.5px solid var(--rule)}
+.ai li h4{font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:20px;margin-bottom:6px}
+.ai li p{color:var(--ink-2);font-size:15.5px}
+.ai .link{display:inline-flex;gap:10px;align-items:center;margin-top:24px;border-bottom:1.5px solid var(--ink);padding-bottom:4px}
+@media (max-width:900px){.ai{grid-template-columns:1fr}.ai .bot,.ai ol{grid-column:auto}}
+
+/* ---------- real estate (dark spread) ---------- */
+.estate{background:var(--ink);color:var(--paper);margin-top:96px;padding:72px 0 0}
+.estate .sec-h h2{color:var(--paper)}
+.estate .sec-h .mono{color:var(--green)}
+.estate .grid{display:grid;grid-template-columns:200px 1.3fr 1fr;gap:24px;padding:0 var(--pad)}
+.estate .grid p{color:#c9c7bf;grid-column:3}
+.estate .grid .big{grid-column:2;font-size:clamp(22px,2.2vw,30px);line-height:1.25;font-weight:500}
+.estate .g2{color:var(--green)}
+.listings{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin:56px var(--pad) 0;background:#3a3a37;border:1.5px solid #3a3a37}
+.listing{background:var(--ink);padding:22px;display:flex;flex-direction:column;gap:6px;transition:background .25s,color .25s}
+.listing .fh{display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1.5px solid #3a3a37;color:#a9a79f}
+.listing h4{font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(24px,2.2vw,34px);line-height:.95;margin-top:22px}
+.listing .loc{color:var(--green)}
+.listing dl{display:grid;grid-template-columns:repeat(3,auto);grid-auto-flow:column;grid-template-rows:auto auto;justify-content:start;column-gap:28px;row-gap:2px;margin:22px 0}
+.listing dt{color:#8a8880}
+.listing dd{font-size:15px;color:var(--paper)}
+.listing .price{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:14px;border-top:1.5px solid #3a3a37}
+.listing .price b{font-stretch:125%;font-weight:800;font-size:22px}
+.listing .price .mono{color:#a9a79f}
+.listing:hover{background:var(--paper);color:var(--ink)}
+.listing:hover .loc{color:var(--green-ink)}
+.listing:hover dd{color:var(--ink)}
+.listing:hover .fh,.listing:hover .price{border-color:var(--ink)}
+.listing:hover .price .mono{color:var(--ink)}
+.advisor{display:grid;grid-template-columns:1.2fr 1fr auto;gap:24px;align-items:center;margin:16px var(--pad) 0;padding:22px 24px;background:var(--green);color:var(--ink)}
+.advisor h3{font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(26px,2.6vw,38px);line-height:1;margin:6px 0 4px}
+.advisor p{font-size:15px}
+.advisor .reach{display:grid;gap:4px;text-transform:none;font-size:13px}
+.advisor .reach a:hover{text-decoration:underline}
+.visit{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);padding:16px 22px;font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:15px;white-space:nowrap}
+.visit svg{width:10px;height:14px}
+.visit:hover{background:var(--paper);color:var(--ink)}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1.5px solid #3a3a37}
+.pillars div{padding:28px var(--pad);border-right:1.5px solid #3a3a37}
+.pillars div:last-child{border-right:0}
+.pillars .mono{color:var(--green)}
+.pillars h4{font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:18px;margin:16px 0 6px}
+.pillars p{color:#a9a79f;font-size:15px}
+@media (max-width:900px){
+  .estate .grid{grid-template-columns:1fr}.estate .grid p,.estate .grid .big{grid-column:auto}
+  .listings{grid-template-columns:1fr 1fr}.advisor{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr 1fr}.pillars div:nth-child(2){border-right:0}.pillars div:nth-child(-n+2){border-bottom:1.5px solid #3a3a37}
+}
+
+/* ---------- commodities manifest ---------- */
+.manifest{margin:0 var(--pad);border:1.5px solid var(--rule)}
+.manifest .head,.manifest .line{display:grid;grid-template-columns:70px 1.2fr 1.6fr 1fr;gap:16px;padding:16px 20px;align-items:baseline}
+.manifest .head{background:var(--ink);color:var(--paper)}
+.manifest .line{border-top:1.5px solid var(--rule);transition:background .25s}
+.manifest .line:hover{background:var(--green)}
+.manifest .line h4{font-stretch:125%;font-weight:800;font-size:clamp(20px,2vw,28px);text-transform:uppercase}
+.manifest .line p{color:var(--ink-2);font-size:15px}
+.manifest .note{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 20px;border-top:1.5px solid var(--rule);background:var(--paper-2)}
+@media (max-width:600px){.listings{grid-template-columns:1fr}}
+@media (max-width:760px){.manifest .head{display:none}.manifest .line{grid-template-columns:44px 1fr}.manifest .line p,.manifest .line .mono:last-child{grid-column:2}}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-block:1.5px solid var(--rule);margin-top:96px}
+.step{padding:28px var(--pad) 36px;border-right:1.5px solid var(--rule);position:relative}
+.step:last-child{border-right:0}
+.step::after{content:"";position:absolute;right:-11px;top:34px;width:20px;height:20px;background:var(--paper);z-index:1;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 1l9 9-9 9' fill='none' stroke='black' stroke-width='3'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 1l9 9-9 9' fill='none' stroke='black' stroke-width='3'/%3E%3C/svg%3E") center/contain no-repeat;background:var(--green-ink)}
+.step:last-child::after{display:none}
+.step .n{font-stretch:125%;font-weight:800;font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.step h4{font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:18px;margin:20px 0 6px}
+.step p{color:var(--ink-2);font-size:15px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1.5px solid var(--rule)}.step::after{display:none}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1.5px solid var(--rule)}.step:last-child{border-bottom:0}}
+
+/* ---------- journal ---------- */
+.journal{display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid var(--rule)}
+.journal a{padding:28px var(--pad) 36px;border-bottom:1.5px solid var(--rule);display:flex;flex-direction:column;gap:40px;justify-content:space-between;transition:background .25s}
+.journal a:first-child{border-right:1.5px solid var(--rule)}
+.journal a:hover{background:var(--paper-2)}
+.journal h3{font-size:clamp(26px,2.6vw,38px);font-weight:600;letter-spacing:-.015em;line-height:1.08;max-width:22ch}
+.journal .meta{display:flex;justify-content:space-between;color:var(--ink-2)}
+@media (max-width:760px){.journal{grid-template-columns:1fr}.journal a:first-child{border-right:0}}
+
+/* ---------- enquiry form ---------- */
+.enq{margin:0 var(--pad);border:1.5px solid var(--rule);background:#f6f5f0}
+.pick{border:0;padding:24px;border-bottom:1.5px solid var(--rule)}
+.pick legend{float:left;width:100%;margin-bottom:16px;color:var(--ink-2)}
+.opts{display:flex;flex-wrap:wrap;gap:8px;clear:both}
+.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:inline-block;padding:12px 16px;border:1.5px solid var(--ink);font-stretch:125%;font-weight:800;font-size:15px;text-transform:uppercase;transition:background .2s,color .2s}
+.opts label:hover span{background:var(--paper-2)}
+.opts input:checked+span{background:var(--ink);color:var(--paper)}
+.opts input:focus-visible+span{outline:2px solid var(--green-ink);outline-offset:2px}
+.opts.sub{margin-top:14px;align-items:center}
+.opts.sub>.mono{margin-right:6px;color:var(--ink-2)}
+.opts.sub span{font-size:13px;padding:8px 12px}
+.opts.sub input:checked+span{background:var(--green);color:var(--ink);border-color:var(--ink)}
+.fields{display:grid;grid-template-columns:1fr 1fr}
+.f{display:flex;flex-direction:column;gap:6px;padding:18px 24px;border-bottom:1.5px solid var(--rule);transition:background .2s}
+.f:nth-child(odd):not(.full){border-right:1.5px solid var(--rule)}
+.f.full{grid-column:1/-1}
+.f:focus-within{background:rgba(84,184,87,.1)}
+.f .mono{color:var(--ink-2)}
+.f input,.f textarea{font:inherit;font-size:20px;font-weight:500;color:var(--ink);background:transparent;border:0;outline:none;padding:4px 0;resize:vertical;width:100%}
+.enq-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:20px 24px}
+.enq-foot p{color:var(--ink-2);max-width:44ch;text-transform:none}
+.send{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--paper);border:0;padding:18px 26px;font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:18px;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.send:hover{background:var(--green);color:var(--ink)}
+.send svg{width:12px;height:16px}
+.sent{display:none;margin:0 24px 24px;padding:12px 14px;border:1.5px dashed var(--green-ink);color:var(--green-ink)}
+@media (max-width:640px){.fields{grid-template-columns:1fr}.f:nth-child(odd):not(.full){border-right:0}}
+
+/* ---------- footer ---------- */
+footer{margin-top:120px;border-top:1.5px solid var(--rule)}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1.5px solid var(--rule)}
+.foot-grid>div{padding:24px var(--pad);border-right:1.5px solid var(--rule);display:grid;gap:8px;align-content:start}
+.foot-grid>div:last-child{border-right:0}
+.foot-grid .mono:first-child{color:var(--soft);margin-bottom:6px}
+.foot-grid a:hover{color:var(--green-ink)}
+.colophon{padding:0 var(--pad);overflow:hidden}
+.colophon .x{font-size:clamp(34px,8.6vw,170px);padding:28px 0 12px;line-height:.86}
+.colophon .x span{color:var(--green-ink)}
+.fine{display:flex;justify-content:space-between;gap:16px;padding:14px var(--pad);border-top:1.5px solid var(--rule);color:var(--ink-2);flex-wrap:wrap}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid>div:nth-child(2){border-right:0}.foot-grid>div:nth-child(-n+2){border-bottom:1.5px solid var(--rule)}}
+
+/* reveal: lines wipe in from left */
+.up{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.up.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.up{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <nav aria-label="Primary">
+    <a href="#about">About</a>
+    <a href="#divisions">Divisions</a>
+    <a href="#network">Network</a>
+    <a href="#estate">KLB Homes</a>
+    <a href="#commodities">Commodities</a>
+  </nav>
+  <a href="#" class="logo" aria-label="KLB Solutions home"><img src="assets/img/logo.png" alt="KLB"></a>
+  <div class="right">
+    <span class="mono" id="clock">DXB --:--</span>
+    <a href="#contact" class="cta">Book a call
+      <svg class="chev" viewBox="0 0 9 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l6 5-6 5"/></svg></a>
+    <button class="menu" onclick="document.getElementById('top').classList.toggle('open')">Menu</button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-l">
+      <div class="hero-meta mono"><span>KLB Solutions FZCO</span><span>Est. Dubai Silicon Oasis</span></div>
+      <h1 class="x">
+        <span class="ln">We</span>
+        <span class="ln">connect
+          <svg viewBox="0 0 40 60" aria-hidden="true"><path d="M36 4L8 30l28 26" fill="none" stroke="#54b857" stroke-width="9"/></svg></span>
+        <span class="ln">you to</span>
+        <span class="ln g">success.</span>
+      </h1>
+      <div class="hero-foot">
+        <p>One partner for marketing, AI, off-market property and global commodities. The common thread is our network — the people we know, and the deals that follow.</p>
+        <a href="#contact" class="cta">Start a conversation
+          <svg class="chev" viewBox="0 0 9 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l6 5-6 5"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-r">
+      <span class="coord mono">25.12° N / 55.38° E — DXB</span>
+      <!-- Four divisions converge on the KLB chevron: one point of contact -->
+      <svg class="switch" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Marketing, AI, KLB Homes and commodities lines converging on a single point">
+        <defs><path id="m1" d="M640 120 H440 C330 120 290 300 200 300"/><path id="m2" d="M640 240 H440 C360 240 300 300 200 300"/><path id="m3" d="M640 360 H440 C360 360 300 300 200 300"/><path id="m4" d="M640 480 H440 C330 480 290 300 200 300"/><pattern id="hdots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#ecebe4" opacity=".14"/></pattern></defs>
+        <rect x="-900" y="-900" width="2400" height="2400" fill="url(#hdots)"/>
+        <g class="wires">
+          <path id="w1" d="M1400 120 H440 C330 120 290 300 200 300"/>
+          <path id="w2" d="M1400 240 H440 C360 240 300 300 200 300"/>
+          <path id="w3" d="M1400 360 H440 C360 360 300 300 200 300"/>
+          <path id="w4" d="M1400 480 H440 C330 480 290 300 200 300"/>
+        </g>
+        <g class="labels">
+          <text x="446" y="108">01 Marketing</text>
+          <text x="446" y="228">02 AI · Worldie</text>
+          <text x="446" y="348">03 KLB Homes</text>
+          <text x="446" y="468">04 Commodities</text>
+        </g>
+        <g fill="#54b857">
+          <circle r="5"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#m1"/></animateMotion></circle>
+          <circle r="5"><animateMotion dur="2.6s" begin=".7s" repeatCount="indefinite"><mpath href="#m2"/></animateMotion></circle>
+          <circle r="5"><animateMotion dur="2.9s" begin="1.3s" repeatCount="indefinite"><mpath href="#m3"/></animateMotion></circle>
+          <circle r="5"><animateMotion dur="3.4s" begin=".4s" repeatCount="indefinite"><mpath href="#m4"/></animateMotion></circle>
+        </g>
+        <path d="M222 252 L176 300 L222 348" fill="none" stroke="#54b857" stroke-width="14"/>
+        <text x="58" y="314" class="you">YOU</text>
+      </svg>
+      <span class="tag mono">Fig. 01 — Four divisions, one point of contact</span>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div><span class="mono">01</span><b>Marketing</b></div>
+    <div><span class="mono">02</span><b>AI</b></div>
+    <div><span class="mono">03</span><b>KLB Homes</b></div>
+    <div><span class="mono">04</span><b>Commodities</b></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="sec-h up"><span class="mono">§ About</span><h2 class="x">Your growth<br>partner.</h2></div>
+    <div class="manifesto">
+      <p class="lead up">Growth comes from three things: <em>strategy</em>, <em>networks</em> and <em>execution</em>. We bring all three — with global reach and solutions built around you, never off the shelf.</p>
+      <p class="body up">KLB Solutions is more than a service provider. Across marketing, real estate, AI and commodities, we bring the knowledge, relationships and innovation to turn opportunity into results.</p>
+      <p class="body up">Whether you're looking to scale, streamline or explore something new, we guide the venture and open the doors — then stay involved to see it through.</p>
+    </div>
+
+    <!-- DIVISIONS INDEX -->
+    <div class="index" id="divisions">
+      <a href="#contact" class="row">
+        <span class="num mono">01 / Marketing</span>
+        <h3 class="c">Marketing</h3>
+        <div><p>Strategies from a team that has worked with world-renowned brands — built to reach the right audience, B2B or B2C.</p>
+          <div class="tags">Lead gen · AI marketing · Video · Online ads</div></div>
+        <span class="go"><svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 1l8 7-8 7"/></svg></span>
+      </a>
+      <a href="#ai" class="row">
+        <span class="num mono">02 / Worldie.ai</span>
+        <h3 class="c">Artificial Intelligence</h3>
+        <div><p>Our AI division automates processes, advises on integration and builds custom tools for businesses of every size.</p>
+          <div class="tags">Automation · Chatbots · Consulting · Custom AI</div></div>
+        <span class="go"><svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 1l8 7-8 7"/></svg></span>
+      </a>
+      <a href="#estate" class="row">
+        <span class="num mono">03 / KLB Homes</span>
+        <h3 class="c">Real Estate</h3>
+        <div><p>Our boutique agency in Marbella, representing buyers across the Costa del Sol — led by Lucie Balasova.</p>
+          <div class="tags">Villas · Apartments · Penthouses · New developments</div></div>
+        <span class="go"><svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 1l8 7-8 7"/></svg></span>
+      </a>
+      <a href="#commodities" class="row">
+        <span class="num mono">04 / Commodities</span>
+        <h3 class="c">Commodities</h3>
+        <div><p>Introductions, due diligence and project management across global energy and agricultural supply chains.</p>
+          <div class="tags">Coal · Wood pellets · Urea · Oil · Fuel · Pet coke</div></div>
+        <span class="go"><svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 1l8 7-8 7"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- NETWORK -->
+  <section class="network" id="network">
+    <div class="side">
+      <div>
+        <span class="mono">§ Network</span>
+        <h2 class="x" style="margin:16px 0 20px">Run from<br><span class="g">Dubai.</span></h2>
+        <p>Our edge is who we know. Years of relationships with agents, producers and partners let us open doors that stay closed to the public.</p>
+      </div>
+      <ol class="legend">
+        <li><span class="k hq-k"></span><b>Dubai</b><span>HQ · Silicon Oasis</span></li>
+        <li><span class="k">1</span><b>London · UK</b><span>5,473 km</span></li>
+        <li><span class="k">2</span><b>Marbella · KLB Homes</b><span>5,785 km</span></li>
+        <li><span class="k">3</span><b>ASEAN · trade</b><span>5,837 km</span></li>
+      </ol>
+    </div>
+    <div class="map">
+      <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Range chart centred on Dubai: London 5,473 km, Marbella 5,785 km, ASEAN 5,837 km">
+        <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#54b857" stop-opacity="0"/><stop offset="1" stop-color="#54b857" stop-opacity=".4"/></linearGradient></defs>
+        <circle cx="300" cy="300" r="200" class="disc"/>
+        <g class="sweep"><path d="M300 300 L300 100 A200 200 0 0 1 400 126.8 Z" fill="url(#sweep)"/><line x1="300" y1="300" x2="400" y2="126.8" class="beam"/></g>
+        <circle cx="300" cy="300" r="55.4" class="ring"/><circle cx="300" cy="300" r="110.8" class="ring"/><circle cx="300" cy="300" r="166.2" class="ring"/>
+        <g class="ticks"><line x1="300.0" y1="100.0" x2="300.0" y2="110.0" class="big"/><line x1="334.7" y1="103.0" x2="334.0" y2="107.0"/><line x1="368.4" y1="112.1" x2="367.0" y2="115.8"/><line x1="400.0" y1="126.8" x2="395.0" y2="135.5" class="big"/><line x1="428.6" y1="146.8" x2="426.0" y2="149.9"/><line x1="453.2" y1="171.4" x2="450.1" y2="174.0"/><line x1="473.2" y1="200.0" x2="464.5" y2="205.0" class="big"/><line x1="487.9" y1="231.6" x2="484.2" y2="233.0"/><line x1="497.0" y1="265.3" x2="493.0" y2="266.0"/><line x1="500.0" y1="300.0" x2="490.0" y2="300.0" class="big"/><line x1="497.0" y1="334.7" x2="493.0" y2="334.0"/><line x1="487.9" y1="368.4" x2="484.2" y2="367.0"/><line x1="473.2" y1="400.0" x2="464.5" y2="395.0" class="big"/><line x1="453.2" y1="428.6" x2="450.1" y2="426.0"/><line x1="428.6" y1="453.2" x2="426.0" y2="450.1"/><line x1="400.0" y1="473.2" x2="395.0" y2="464.5" class="big"/><line x1="368.4" y1="487.9" x2="367.0" y2="484.2"/><line x1="334.7" y1="497.0" x2="334.0" y2="493.0"/><line x1="300.0" y1="500.0" x2="300.0" y2="490.0" class="big"/><line x1="265.3" y1="497.0" x2="266.0" y2="493.0"/><line x1="231.6" y1="487.9" x2="233.0" y2="484.2"/><line x1="200.0" y1="473.2" x2="205.0" y2="464.5" class="big"/><line x1="171.4" y1="453.2" x2="174.0" y2="450.1"/><line x1="146.8" y1="428.6" x2="149.9" y2="426.0"/><line x1="126.8" y1="400.0" x2="135.5" y2="395.0" class="big"/><line x1="112.1" y1="368.4" x2="115.8" y2="367.0"/><line x1="103.0" y1="334.7" x2="107.0" y2="334.0"/><line x1="100.0" y1="300.0" x2="110.0" y2="300.0" class="big"/><line x1="103.0" y1="265.3" x2="107.0" y2="266.0"/><line x1="112.1" y1="231.6" x2="115.8" y2="233.0"/><line x1="126.8" y1="200.0" x2="135.5" y2="205.0" class="big"/><line x1="146.8" y1="171.4" x2="149.9" y2="174.0"/><line x1="171.4" y1="146.8" x2="174.0" y2="149.9"/><line x1="200.0" y1="126.8" x2="205.0" y2="135.5" class="big"/><line x1="231.6" y1="112.1" x2="233.0" y2="115.8"/><line x1="265.3" y1="103.0" x2="266.0" y2="107.0"/></g><text x="300.0" y="84.0" text-anchor="middle" class="card">N</text><text x="522.0" y="306.0" text-anchor="middle" class="card">E</text><text x="300.0" y="528.0" text-anchor="middle" class="card">S</text><text x="78.0" y="306.0" text-anchor="middle" class="card">W</text>
+        <path class="arc" id="r1" d="M300 300 Q268.8 225.8 197.4 188.4"/><circle r="4" class="mover"><animateMotion dur="3.5s" begin="0.7s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle><path class="arc" id="r2" d="M300 300 Q242.6 237.1 158.3 225.3"/><circle r="4" class="mover"><animateMotion dur="4.0s" begin="1.4s" repeatCount="indefinite"><mpath href="#r2"/></animateMotion></circle><path class="arc" id="r3" d="M300 300 Q366.8 354.1 452.6 353.2"/><circle r="4" class="mover"><animateMotion dur="4.5s" begin="2.0999999999999996s" repeatCount="indefinite"><mpath href="#r3"/></animateMotion></circle>
+        <g class="mark"><circle cx="197.4" cy="188.4" r="15"/><text x="197.4" y="194.4" text-anchor="middle">1</text></g><g class="mark"><circle cx="158.3" cy="225.3" r="15"/><text x="158.3" y="231.3" text-anchor="middle">2</text></g><g class="mark"><circle cx="452.6" cy="353.2" r="15"/><text x="452.6" y="359.2" text-anchor="middle">3</text></g>
+        <circle class="pulse" cx="300" cy="300" r="14"/><circle class="hq" cx="300" cy="300" r="11"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- AI -->
+  <section class="sec" id="ai">
+    <div class="sec-h up"><span class="mono">§ 02 — Worldie.ai</span><h2 class="x">AI that does<br>the <span class="g">work.</span></h2></div>
+    <div class="ai">
+      <div></div>
+      <div class="bot up">
+        <div class="bar mono"><span class="lights"><i></i><i></i><i></i></span><span>worldie.ai / agent console</span><span class="live">● Live</span></div>
+        <div class="stage">
+          <div class="orbit o1"><span class="sat" style="left:50%;top:0"><span><b>Lead gen</b></span></span><span class="sat" style="left:93.3%;top:25%"><span><b>Chatbots</b></span></span><span class="sat" style="left:93.3%;top:75%"><span><b>Content</b></span></span><span class="sat" style="left:50%;top:100%"><span><b>Reputation</b></span></span><span class="sat" style="left:6.7%;top:75%"><span><b>Workflows</b></span></span><span class="sat" style="left:6.7%;top:25%"><span><b>Custom AI</b></span></span></div>
+          <div class="orbit o2"><i></i></div>
+          <svg class="globe" viewBox="0 0 200 200" role="img" aria-label="Wireframe globe with connected AI nodes">
+            <defs><radialGradient id="gshade" cx=".38" cy=".34" r=".75"><stop offset="0" stop-color="#54b857" stop-opacity=".28"/><stop offset=".7" stop-color="#54b857" stop-opacity=".05"/><stop offset="1" stop-color="#54b857" stop-opacity="0"/></radialGradient></defs>
+            <circle cx="100" cy="100" r="80" fill="url(#gshade)"/>
+            <g class="lat"><ellipse cx="100" cy="169.3" rx="40.0" ry="6.4"/><ellipse cx="100" cy="140.0" rx="69.3" ry="11.1"/><ellipse cx="100" cy="100.0" rx="80.0" ry="12.8"/><ellipse cx="100" cy="60.0" rx="69.3" ry="11.1"/><ellipse cx="100" cy="30.7" rx="40.0" ry="6.4"/></g>
+            <g class="mer"><ellipse cx="100" cy="100" ry="80" rx="80"><animate attributeName="rx" values="80;0;80" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="12s" begin="-0s" repeatCount="indefinite"/></ellipse><ellipse cx="100" cy="100" ry="80" rx="80"><animate attributeName="rx" values="80;0;80" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="12s" begin="-2s" repeatCount="indefinite"/></ellipse><ellipse cx="100" cy="100" ry="80" rx="80"><animate attributeName="rx" values="80;0;80" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="12s" begin="-4s" repeatCount="indefinite"/></ellipse><ellipse cx="100" cy="100" ry="80" rx="80"><animate attributeName="rx" values="80;0;80" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="12s" begin="-6s" repeatCount="indefinite"/></ellipse><ellipse cx="100" cy="100" ry="80" rx="80"><animate attributeName="rx" values="80;0;80" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="12s" begin="-8s" repeatCount="indefinite"/></ellipse><ellipse cx="100" cy="100" ry="80" rx="80"><animate attributeName="rx" values="80;0;80" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="12s" begin="-10s" repeatCount="indefinite"/></ellipse></g>
+            <circle cx="100" cy="100" r="80" class="rim"/>
+            <g class="links"><path d="M62 74 Q100 40 138 70"/><path d="M138 70 Q150 110 120 138"/><path d="M62 74 Q70 120 120 138"/><path d="M62 74 Q96 100 100 100 M100 100 Q118 86 138 70"/></g>
+            <g class="nodes"><circle cx="62" cy="74" r="4"/><circle cx="138" cy="70" r="4"/><circle cx="120" cy="138" r="4"/><circle cx="100" cy="100" r="5.5" class="core"/></g>
+            <circle cx="100" cy="100" r="5.5" class="ping"/>
+          </svg>
+        </div>
+        <div class="term mono" id="term" aria-hidden="true"></div>
+      </div>
+      <div class="up">
+        <ol>
+          <li><span class="mono">A.</span><div><h4>Automation</h4><p>We map how your business runs, then automate what slows it down — from customer-service chatbots to internal workflows.</p></div></li>
+          <li><span class="mono">B.</span><div><h4>Consulting</h4><p>Clear, specialist guidance on where AI fits in your operations and how to integrate it well.</p></div></li>
+          <li><span class="mono">C.</span><div><h4>Custom AI</h4><p>Bespoke tools for content, lead generation and reputation management, built around your challenges.</p></div></li>
+        </ol>
+        <a href="https://www.worldie.ai" target="_blank" rel="noopener" class="link mono">Visit worldie.ai ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KLB HOMES -->
+  <section class="estate" id="estate">
+    <div class="sec-h up"><span class="mono">§ 03 — KLB Homes · Marbella</span><h2 class="x">Your home on the<br><span class="g2">Costa del Sol.</span></h2></div>
+    <div class="grid">
+      <div></div>
+      <p class="big up">KLB Homes is our boutique real estate agency in Marbella. We act for you — the buyer — from the first viewing through negotiation to completion.</p>
+      <p class="up">Led by founder Lucie Balasova, with six years in the Marbella market and a trusted circle of lawyers, mortgage advisors, developers, architects and contractors. Not every property we work with is advertised — tell us what you're looking for and we'll search the network.</p>
+    </div>
+    <div class="listings up">
+      <a class="listing" href="https://klb-homes.vercel.app/buy/villa-blanc" target="_blank" rel="noopener">
+        <div class="fh mono"><span>KLB/RE-01</span><span>Villa</span></div>
+        <h4>Villa Blanc</h4>
+        <span class="loc mono">Nueva Andalucía</span>
+        <dl class="mono"><dt>Beds</dt><dd>4</dd><dt>Baths</dt><dd>4+1</dd><dt>Built</dt><dd>388 m²</dd></dl>
+        <div class="price"><b>€3,495,000</b><span class="mono">View ↗</span></div>
+      </a>
+      <a class="listing" href="https://klb-homes.vercel.app/buy/andara-2" target="_blank" rel="noopener">
+        <div class="fh mono"><span>KLB/RE-02</span><span>Villa</span></div>
+        <h4>Andara 2</h4>
+        <span class="loc mono">Nagüeles</span>
+        <dl class="mono"><dt>Beds</dt><dd>7</dd><dt>Baths</dt><dd>9</dd><dt>Built</dt><dd>On request</dd></dl>
+        <div class="price"><b>€3,500,000</b><span class="mono">View ↗</span></div>
+      </a>
+      <a class="listing" href="https://klb-homes.vercel.app/buy/banus-1" target="_blank" rel="noopener">
+        <div class="fh mono"><span>KLB/RE-03</span><span>Apartment</span></div>
+        <h4>Banus 1</h4>
+        <span class="loc mono">Puerto Banús</span>
+        <dl class="mono"><dt>Beds</dt><dd>3</dd><dt>Baths</dt><dd>3</dd><dt>Built</dt><dd>On request</dd></dl>
+        <div class="price"><b>€2,950,000</b><span class="mono">View ↗</span></div>
+      </a>
+      <a class="listing" href="https://klb-homes.vercel.app/buy/buenavista-ph" target="_blank" rel="noopener">
+        <div class="fh mono"><span>KLB/RE-04</span><span>Penthouse</span></div>
+        <h4>Buenavista PH</h4>
+        <span class="loc mono">Benahavís</span>
+        <dl class="mono"><dt>Beds</dt><dd>3</dd><dt>Baths</dt><dd>2</dd><dt>Built</dt><dd>On request</dd></dl>
+        <div class="price"><b>€1,495,000</b><span class="mono">View ↗</span></div>
+      </a>
+      <a class="listing" href="https://klb-homes.vercel.app/buy/the-hills-1" target="_blank" rel="noopener">
+        <div class="fh mono"><span>KLB/RE-05</span><span>Villa</span></div>
+        <h4>The Hills 1</h4>
+        <span class="loc mono">La Quinta</span>
+        <dl class="mono"><dt>Beds</dt><dd>6</dd><dt>Baths</dt><dd>6</dd><dt>Built</dt><dd>On request</dd></dl>
+        <div class="price"><b>€13,800,000</b><span class="mono">View ↗</span></div>
+      </a>
+      <a class="listing" href="https://klb-homes.vercel.app/buy/cerquilla-59" target="_blank" rel="noopener">
+        <div class="fh mono"><span>KLB/RE-06</span><span>Villa</span></div>
+        <h4>Cerquilla 59</h4>
+        <span class="loc mono">La Cerquilla</span>
+        <dl class="mono"><dt>Beds</dt><dd>7</dd><dt>Baths</dt><dd>6</dd><dt>Plot</dt><dd>2,548 m²</dd></dl>
+        <div class="price"><b>€7,950,000</b><span class="mono">View ↗</span></div>
+      </a>
+    </div>
+    <div class="advisor up">
+      <div class="who">
+        <span class="mono">Your advisor</span>
+        <h3>Lucie Balasova</h3>
+        <p>Founder &amp; Property Advisor · English, Spanish &amp; Czech</p>
+      </div>
+      <div class="reach mono">
+        <a href="mailto:lucie@klb-homes.com">lucie@klb-homes.com</a>
+        <a href="tel:+34600145534">+34 600 145 534</a>
+        <a href="tel:+420724760354">+420 724 760 354</a>
+      </div>
+      <a class="visit" href="https://klb-homes.vercel.app/" target="_blank" rel="noopener">Visit KLB Homes
+        <svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2 1l8 7-8 7"/></svg></a>
+    </div>
+    <div class="pillars">
+      <div><span class="mono">i.</span><h4>Personal</h4><p>We learn how you want to live, not just how many bedrooms you need.</p></div>
+      <div><span class="mono">ii.</span><h4>Local</h4><p>Real knowledge of Marbella's communities and the wider Costa del Sol.</p></div>
+      <div><span class="mono">iii.</span><h4>Connected</h4><p>The right professionals around you, during the purchase and after.</p></div>
+      <div><span class="mono">iv.</span><h4>Honest</h4><p>Advice on what's right for you — even when it isn't what you hoped to hear.</p></div>
+    </div>
+  </section>
+
+  <!-- COMMODITIES -->
+  <section class="sec" id="commodities">
+    <div class="sec-h up"><span class="mono">§ 04 — Commodities</span><h2 class="x">We don't sell.<br>We <span class="g">manage.</span></h2></div>
+    <div class="manifest up">
+      <div class="head mono"><span>Ref.</span><span>Commodity</span><span>Context</span><span>Our role</span></div>
+      <div class="line"><span class="mono">C-01</span><h4>Coal</h4><p>Still one of the world's most widely used commodities.</p><span class="mono">Producer access · pricing</span></div>
+      <div class="line"><span class="mono">C-02</span><h4>Wood Pellets</h4><p>A sustainable fuel alternative in rising demand.</p><span class="mono">Leading producers</span></div>
+      <div class="line"><span class="mono">C-03</span><h4>Urea</h4><p>Essential to global agriculture and food production.</p><span class="mono">Consistent supply</span></div>
+      <div class="line"><span class="mono">C-04</span><h4>Oil · Fuel · Pet Coke</h4><p>Crude, refined fuels and petroleum coke from established producers.</p><span class="mono">Quality-matched sourcing</span></div>
+      <div class="note mono"><span>Role: facilitator & project manager — not a direct seller</span><span>Introductions → Due diligence → Negotiation → Oversight</span></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="steps">
+    <div class="step up"><span class="n">01</span><h4>Zoom call</h4><p>We start by understanding exactly what you need.</p></div>
+    <div class="step up"><span class="n">02</span><h4>Strategy</h4><p>A plan built for your goals. No templates.</p></div>
+    <div class="step up"><span class="n">03</span><h4>Network</h4><p>We bring in the right people and run the process.</p></div>
+    <div class="step up"><span class="n">04</span><h4>Partnership</h4><p>We stay close to compound the results.</p></div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section class="sec" id="journal">
+    <div class="sec-h up"><span class="mono">§ Journal</span><h2 class="x">Notes from<br>the founder.</h2></div>
+    <div class="journal">
+      <a href="https://www.klb-solutions.com/blog" class="up">
+        <span class="mono">Trade · Asia</span>
+        <h3>Supply chain diversification: a boost for ASEAN economies</h3>
+        <div class="meta mono"><span>Adam Kelbie</span><span>10.02.2023</span></div>
+      </a>
+      <a href="https://www.klb-solutions.com/blog" class="up">
+        <span class="mono">Mindset</span>
+        <h3>Breaking out of your lane: why staying put is overrated</h3>
+        <div class="meta mono"><span>Adam Kelbie</span><span>07.02.2023</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="sec-h up"><span class="mono">§ Contact</span><h2 class="x">Let's <span class="g">talk.</span></h2></div>
+    <form class="enq up" id="enquiry" novalidate>
+      <fieldset class="pick">
+        <legend class="mono">01 — What can we help with?</legend>
+        <div class="opts">
+          <label><input type="radio" name="division" value="Marketing" checked><span>Marketing</span></label>
+          <label><input type="radio" name="division" value="Worldie.ai"><span>AI · Worldie</span></label>
+          <label><input type="radio" name="division" value="KLB Homes"><span>KLB Homes</span></label>
+          <label><input type="radio" name="division" value="Commodities"><span>Commodities</span></label>
+          <label><input type="radio" name="division" value="Other"><span>Something else</span></label>
+        </div>
+        <div class="opts sub" id="homes-type" hidden>
+          <span class="mono">Property type</span>
+          <label><input type="radio" name="property" value="Villa" checked><span>Villa</span></label>
+          <label><input type="radio" name="property" value="Apartment"><span>Apartment</span></label>
+          <label><input type="radio" name="property" value="Penthouse"><span>Penthouse</span></label>
+          <label><input type="radio" name="property" value="New development"><span>New development</span></label>
+        </div>
+      </fieldset>
+      <div class="fields">
+        <label class="f"><span class="mono">02 — Name *</span><input name="name" required autocomplete="name"></label>
+        <label class="f"><span class="mono">03 — Company</span><input name="company" autocomplete="organization"></label>
+        <label class="f"><span class="mono">04 — Email *</span><input name="email" type="email" required autocomplete="email"></label>
+        <label class="f"><span class="mono">05 — Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+        <label class="f full"><span class="mono">06 — Tell us about your goals</span><textarea name="message" rows="4"></textarea></label>
+      </div>
+      <div class="enq-foot">
+        <p class="mono">Prefer to talk? We'll arrange a Zoom call at a time that suits you.</p>
+        <button class="send" type="submit">Send enquiry
+          <svg viewBox="0 0 12 16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2 1l8 7-8 7"/></svg></button>
+      </div>
+      <div class="sent mono" id="sent" role="status">Received — we'll be in touch shortly to arrange a call.</div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div><span class="mono">Divisions</span><a href="#divisions">Marketing</a><a href="#ai">Worldie.ai</a><a href="#estate">KLB Homes</a><a href="#commodities">Commodities</a></div>
+    <div><span class="mono">Company</span><a href="#about">About</a><a href="#journal">Journal</a><a href="https://www.klb-solutions.com/privacy">Privacy</a></div>
+    <div><span class="mono">Office</span><span>Silicon Oasis</span><span>Dubai, UAE</span></div>
+    <div><span class="mono">Start</span><a href="#contact">Book a Zoom call →</a></div>
+  </div>
+  <div class="colophon"><div class="x">Connecting you<br><span>&lt;</span> to success.</div></div>
+  <div class="fine mono"><span>© <span id="yr"></span> KLB Solutions FZCO</span><span>All rights reserved</span></div>
+</footer>
+
+<script>
+// Dubai clock in the masthead
+const clock = document.getElementById('clock');
+const tick = () => clock.textContent = 'DXB ' + new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Dubai', hour: '2-digit', minute: '2-digit' }).format(new Date());
+tick(); setInterval(tick, 20000);
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Reveal on scroll
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+document.querySelectorAll('.up').forEach(el => io.observe(el));
+
+document.querySelectorAll('.top nav a').forEach(a => a.addEventListener('click', () => document.getElementById('top').classList.remove('open')));
+
+// Worldie console: type out example agent tasks
+const term = document.getElementById('term');
+const tasks = [['qualify inbound leads', 'done'], ['draft this week\'s posts', 'done'], ['answer website chat', 'live'], ['summarise new reviews', 'done'], ['route invoices to finance', 'done']];
+const shown = [];
+let ti = 0;
+function typeTask() {
+  const [task, status] = tasks[ti++ % tasks.length];
+  let i = 0;
+  const step = () => {
+    const line = '> ' + task.slice(0, i);
+    term.innerHTML = shown.concat(line + '<span class="cur"></span>').join('<br>');
+    if (i++ < task.length) return setTimeout(step, 38);
+    shown.push('> ' + task + ' <span class="ok">… ' + status + '</span>');
+    if (shown.length > 3) shown.shift();
+    term.innerHTML = shown.join('<br>');
+    setTimeout(typeTask, 900);
+  };
+  step();
+}
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) term.innerHTML = tasks.slice(0, 3).map(([t, s]) => '> ' + t + ' <span class="ok">… ' + s + '</span>').join('<br>');
+else typeTask();
+
+// Show property types only for KLB Homes enquiries
+const form = document.getElementById('enquiry'), homes = document.getElementById('homes-type');
+form.addEventListener('change', e => { if (e.target.name === 'division') homes.hidden = e.target.value !== 'KLB Homes'; });
+
+// Placeholder submit — wire to a real endpoint before launch
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!form.reportValidity()) return;
+  document.getElementById('sent').style.display = 'block';
+  form.reset();
+  homes.hidden = true;
+});
+</script>
+</body>
+</html>

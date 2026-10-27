@@ -1,0 +1,60 @@
+{
+  "source": "https://www.klb-solutions.com/",
+  "scraped_on": "2026-10-27",
+  "company": {
+    "legal_name": "KLB Solutions FZCO",
+    "tagline": "Connecting you to success",
+    "hero_line": "Elevating your business to the next level",
+    "location": "Silicon Oasis, Dubai, United Arab Emirates",
+    "founder_author": "Adam Kelbie",
+    "recognition": ["Global Man Magazine"],
+    "ai_division": { "name": "Worldie.ai", "url": "https://www.worldie.ai" },
+    "public_email": null,
+    "public_phone": null,
+    "social_links": []
+  },
+  "brand": {
+    "logo": "assets/img/logo.png",
+    "colors": { "logo_green": "#54B857", "logo_black": "#1A1A1A", "site_navy": "#293D4C", "site_cyan": "#00ADEF" },
+    "fonts_on_old_site": ["Montserrat", "Open Sans"]
+  },
+  "pages": ["/", "/about", "/ai-solutions", "/marketing", "/realestate", "/commodities", "/blog", "/contact-us", "/privacy"],
+  "divisions": {
+    "marketing": {
+      "tagline": "Transforming your marketing, transforming your business",
+      "services": ["Lead Generation (B2B & B2C)", "AI Marketing", "Video Work", "Online Advertising"]
+    },
+    "ai_solutions": {
+      "brand": "Worldie.ai",
+      "services": ["AI Automation (chatbots, workflow optimisation)", "AI Consulting / integration", "Custom AI solutions"],
+      "focus_areas": ["Business process automation", "Content creation", "Lead generation", "Reputation management"]
+    },
+    "real_estate": {
+      "tagline": "Finding your perfect property, building your perfect future",
+      "audience": "High-net-worth buyers",
+      "value_props": ["Off-market access via trusted local agents", "Negotiation on the client's behalf", "Market insight", "Post-purchase support"],
+      "property_types": ["Villa", "Apartment", "UK Luxury"],
+      "policy": "Property details sent on request only",
+      "portfolio_photos": "Marbella villas (assets/img/villa-*.jpg, marbella-aerial*.jpg)"
+    },
+    "commodities": {
+      "model": "Facilitator / project manager, not a direct seller",
+      "products": ["Coal", "Wood Pellets", "Urea", "Oil", "Fuel", "Pet Coke"],
+      "process": ["Introductions", "Due diligence", "Negotiation", "Coordination & oversight"],
+      "note": "Page exists at /commodities but is not linked in the main nav"
+    }
+  },
+  "blog_posts": [
+    { "title": "Supply Chain Diversification: A Boost for ASEAN Economies", "author": "Adam Kelbie", "date": "2023-02-10" },
+    { "title": "Breaking Out of Your Lane: Why Staying Put is Overrated and Boring", "author": "Adam Kelbie", "date": "2023-02-07" }
+  ],
+  "audit_notes": [
+    "No email, phone or social links anywhere on the site — only a contact form",
+    "Commodities division is hidden from navigation and missing from the homepage",
+    "Meta description mentions commodities but not AI; page <title> tags are empty",
+    "Real estate page ships 16 unedited 'Slide title / Write your caption here' placeholder slides",
+    "Typos: 'Ai Automatio n', 'Commodites', 'Book an Zoom call', 'the worldincluding'",
+    "Blog last updated February 2023",
+    "Built on Duda; heavy runtime CSS/JS"
+  ]
+}

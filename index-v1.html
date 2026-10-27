@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KLB Solutions — Marketing, AI, Real Estate & Commodities | Dubai</title>
+<meta name="description" content="KLB Solutions FZCO is a Dubai-based growth partner across marketing, AI (Worldie.ai), off-market real estate and commodities facilitation.">
+<meta property="og:title" content="KLB Solutions — Connecting you to success">
+<meta property="og:description" content="Marketing, AI, real estate and commodities — one global network, from Dubai.">
+<meta property="og:image" content="assets/img/marbella-aerial.jpg">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d0c; --bg-2:#111413; --card:#151917; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --text:#eef1ee; --muted:#9aa39d; --dim:#6b736e;
+  --green:#54b857; --green-2:#7fd581; --green-glow:rgba(84,184,87,.35);
+  --radius:20px; --max:1240px;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"Inter Tight",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green-2);font-weight:600}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--green)}
+h1,h2,h3{font-weight:500;letter-spacing:-.02em;line-height:1.05}
+h2{font-size:clamp(36px,5vw,64px)}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .25s,background .25s,box-shadow .25s;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--green);color:#06120a}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px var(--green-glow)}
+.btn-ghost{border-color:var(--line-2);color:var(--text)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.btn svg{width:16px;height:16px}
+
+/* nav */
+.nav{position:fixed;inset:16px 16px auto;z-index:50;display:flex;justify-content:center}
+.nav-inner{width:100%;max-width:var(--max);display:flex;align-items:center;justify-content:space-between;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(14,17,16,.6);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid var(--line)}
+.logo svg{height:26px;width:auto}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:8px 14px;border-radius:999px;font-size:14px;color:var(--muted);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav .btn{padding:10px 18px}
+.menu-btn{display:none;background:none;border:0;color:var(--text);padding:8px 12px;cursor:pointer}
+@media (max-width:920px){.nav-links{display:none}.menu-btn{display:block}
+  .nav.open .nav-links{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;padding:12px;border-radius:20px;background:rgba(14,17,16,.95);border:1px solid var(--line)}
+  .nav .btn-primary{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:140px 0 72px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:zoom 18s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,13,12,.55) 0%,rgba(11,13,12,.35) 35%,rgba(11,13,12,.92) 82%,var(--bg) 100%)}
+.hero h1{font-size:clamp(48px,8.4vw,128px);max-width:14ch}
+.hero h1 .serif{color:var(--green-2)}
+.hero-sub{max-width:520px;font-size:19px;color:#c8cfc9;margin:28px 0 36px}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:36px;padding-bottom:6px}
+.hero-meta b{display:block;font-size:30px;font-weight:500;letter-spacing:-.02em}
+.hero-meta span{font-size:13px;color:var(--muted)}
+@media (max-width:640px){.hero-meta{grid-template-columns:repeat(3,1fr);gap:16px;width:100%}.hero-meta b{font-size:22px}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:22px 0;background:var(--bg)}
+.marquee-track{display:flex;gap:56px;width:max-content;animation:scroll 40s linear infinite}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--dim);white-space:nowrap;display:flex;align-items:center;gap:56px}
+.marquee span::after{content:"✦";font-style:normal;font-size:14px;color:var(--green)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section{padding:120px 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+.section-head p{max-width:440px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:center}
+.about-grid h2{margin:18px 0 28px}
+.about-grid p+p{margin-top:16px}
+.badge-row{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;border:1px solid var(--line-2);font-size:14px;color:#cfd6d0}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+.about-img{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-img .float{position:absolute;left:20px;right:20px;bottom:20px;padding:20px;border-radius:16px;background:rgba(11,13,12,.7);backdrop-filter:blur(14px);border:1px solid var(--line)}
+.about-img .float q{font-family:var(--serif);font-size:24px;line-height:1.2}
+@media (max-width:920px){.about-grid{grid-template-columns:1fr;gap:48px}}
+
+/* divisions bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.tile{position:relative;border-radius:var(--radius);background:var(--card);border:1px solid var(--line);padding:32px;overflow:hidden;display:flex;flex-direction:column;min-height:340px;transition:border-color .3s,transform .4s}
+.tile:hover{border-color:rgba(84,184,87,.45);transform:translateY(-4px)}
+.tile::after{content:"";position:absolute;inset:auto -20% -60% -20%;height:70%;background:radial-gradient(closest-side,var(--green-glow),transparent);opacity:0;transition:opacity .4s;pointer-events:none}
+.tile:hover::after{opacity:.6}
+.tile .num{font-size:13px;color:var(--dim);font-variant-numeric:tabular-nums}
+.tile h3{font-size:34px;margin:auto 0 12px;position:relative;z-index:1}
+.tile p{color:var(--muted);font-size:15px;max-width:42ch;position:relative;z-index:1}
+.tile .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;position:relative;z-index:1}
+.chip{font-size:12.5px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#cdd4ce}
+.tile .arrow{position:absolute;top:28px;right:28px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:background .3s,transform .3s;z-index:1}
+.tile:hover .arrow{background:var(--green);color:#06120a;transform:rotate(-45deg)}
+.tile.img{color:#fff}
+.tile.img>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;transition:opacity .4s,transform .8s}
+.tile.img:hover>img{opacity:.62;transform:scale(1.04)}
+.tile.img::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(11,13,12,.9))}
+.tile.img p{color:#d4dbd5}
+.t-mkt{grid-column:span 3}.t-ai{grid-column:span 3}.t-re{grid-column:span 4;min-height:420px}.t-com{grid-column:span 2;min-height:420px}
+@media (max-width:920px){.bento{grid-template-columns:1fr}.t-mkt,.t-ai,.t-re,.t-com{grid-column:auto;min-height:340px}}
+
+/* AI band */
+.ai-band{background:var(--bg-2);border-block:1px solid var(--line);position:relative;overflow:hidden}
+.ai-band::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 50%,#000 10%,transparent 65%);opacity:.6}
+.ai-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ai-grid h2{margin:18px 0 24px}
+.ai-visual{position:relative;aspect-ratio:1;max-width:520px;justify-self:center;width:100%}
+.ai-visual img{width:100%;filter:drop-shadow(0 30px 60px rgba(84,184,87,.25))}
+.ai-visual .ring{position:absolute;inset:6%;border-radius:50%;border:1px dashed rgba(84,184,87,.35);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.feature-list{display:grid;gap:2px;margin-top:32px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.feature{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:20px;background:var(--card)}
+.feature .ico{width:44px;height:44px;border-radius:12px;background:rgba(84,184,87,.12);color:var(--green-2);display:grid;place-items:center}
+.feature .ico svg{width:20px;height:20px}
+.feature h4{font-size:17px;font-weight:600;margin-bottom:2px}
+.feature p{font-size:14.5px;color:var(--muted)}
+@media (max-width:920px){.ai-grid{grid-template-columns:1fr}}
+
+/* real estate gallery */
+.re-head{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
+@media (max-width:920px){.re-head{grid-template-columns:1fr}}
+.gallery{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+.gallery figure{flex:0 0 min(78vw,520px);scroll-snap-align:start;border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:3/2}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;left:16px;bottom:16px;padding:6px 12px;border-radius:999px;background:rgba(11,13,12,.7);backdrop-filter:blur(8px);font-size:13px}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.pillar{padding:24px;border-top:1px solid var(--line-2)}
+.pillar b{display:block;font-size:13px;color:var(--green-2);margin-bottom:12px;font-variant-numeric:tabular-nums}
+.pillar h4{font-size:19px;font-weight:600;margin-bottom:6px}
+.pillar p{font-size:14.5px;color:var(--muted)}
+@media (max-width:920px){.pillars{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}}
+.note{display:inline-flex;gap:10px;align-items:center;margin-top:24px;font-size:14px;color:var(--muted)}
+.note svg{width:16px;height:16px;color:var(--green-2)}
+
+/* commodities */
+.com-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:64px}
+.com-wrap h2{margin:18px 0 24px}
+.com-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.com-item{background:var(--bg);padding:28px;transition:background .3s}
+.com-item:hover{background:var(--card)}
+.com-item .k{font-family:var(--serif);font-style:italic;font-size:36px;line-height:1;color:var(--green-2)}
+.com-item h4{font-size:18px;font-weight:600;margin:14px 0 6px}
+.com-item p{font-size:14px;color:var(--muted)}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.steps .chip{display:flex;gap:8px;align-items:center}
+.steps .chip b{color:var(--green-2);font-weight:600}
+@media (max-width:920px){.com-wrap{grid-template-columns:1fr}}
+@media (max-width:560px){.com-list{grid-template-columns:1fr}}
+
+/* process */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{padding:28px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line);position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font-size:13px;color:var(--dim)}
+.step h4{font-size:21px;font-weight:600;margin:40px 0 8px}
+.step p{font-size:14.5px;color:var(--muted)}
+@media (max-width:920px){.process{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.process{grid-template-columns:1fr}}
+
+/* blog */
+.posts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.post{display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding:32px;border-radius:var(--radius);border:1px solid var(--line);transition:border-color .3s,background .3s;min-height:240px}
+.post:hover{border-color:rgba(84,184,87,.45);background:var(--card)}
+.post h3{font-size:28px;line-height:1.15}
+.post .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--dim)}
+@media (max-width:760px){.posts{grid-template-columns:1fr}}
+
+/* contact */
+.contact{position:relative;border-radius:32px;overflow:hidden;padding:72px;background:linear-gradient(135deg,#132016 0%,#0f1311 60%);border:1px solid rgba(84,184,87,.2)}
+.contact::before{content:"";position:absolute;width:600px;height:600px;right:-200px;top:-260px;background:radial-gradient(closest-side,rgba(84,184,87,.28),transparent);pointer-events:none}
+.contact-grid{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:64px}
+.contact h2{margin:18px 0 20px}
+.info{margin-top:36px;display:grid;gap:14px;font-size:15px}
+.info div{display:flex;gap:12px;align-items:center;color:#cdd4ce}
+.info svg{width:18px;height:18px;color:var(--green-2);flex:none}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+input,select,textarea{font:inherit;font-size:15px;color:var(--text);background:rgba(255,255,255,.04);border:1px solid var(--line-2);border-radius:12px;padding:13px 14px;outline:none;transition:border-color .2s,background .2s}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%239aa39d' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+select option{background:#151917}
+input:focus,select:focus,textarea:focus{border-color:var(--green);background:rgba(84,184,87,.06)}
+textarea{min-height:120px;resize:vertical}
+form .btn{grid-column:1/-1;justify-content:center;margin-top:6px}
+.form-ok{display:none;grid-column:1/-1;padding:14px;border-radius:12px;background:rgba(84,184,87,.12);color:var(--green-2);font-size:14px}
+@media (max-width:920px){.contact{padding:40px 24px}.contact-grid{grid-template-columns:1fr;gap:40px}}
+@media (max-width:520px){form{grid-template-columns:1fr}}
+
+/* footer */
+footer{padding:80px 0 40px}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid var(--line)}
+.foot-top h5{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);font-weight:600;margin-bottom:16px}
+.foot-top ul{list-style:none;display:grid;gap:10px;font-size:15px;color:#cdd4ce}
+.foot-top a:hover{color:var(--green-2)}
+.big-tag{font-family:var(--serif);font-style:italic;font-size:clamp(40px,6vw,72px);line-height:1;margin-top:24px;color:var(--text)}
+.foot-bot{display:flex;justify-content:space-between;gap:16px;padding-top:28px;font-size:13px;color:var(--dim);flex-wrap:wrap}
+@media (max-width:820px){.foot-top{grid-template-columns:1fr 1fr}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="KLB Solutions home">
+      <!-- Wordmark redrawn from the KLB logo for dark backgrounds -->
+      <svg viewBox="0 0 120 40" fill="none" aria-hidden="true">
+        <rect x="2" y="3" width="6" height="34" fill="#fff"/>
+        <path d="M30 3 L13 20 L30 37" stroke="#54b857" stroke-width="6.5" stroke-linejoin="round" fill="none"/>
+        <path d="M44 3 V37 H66" stroke="#fff" stroke-width="6" fill="none"/>
+        <path d="M76 3 H101 a8.5 8.5 0 0 1 0 17 H76 Z M76 20 H103 a8.5 8.5 0 0 1 0 17 H76 Z" stroke="#fff" stroke-width="6" fill="none"/>
+      </svg>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#divisions">Services</a>
+      <a href="#ai">AI</a>
+      <a href="#real-estate">Real Estate</a>
+      <a href="#commodities">Commodities</a>
+      <a href="#insights">Insights</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary">Book a call
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-bg"><img src="assets/img/marbella-aerial.jpg" alt="" fetchpriority="high"></div>
+    <div class="wrap" style="width:100%">
+      <span class="eyebrow">KLB Solutions FZCO · Dubai</span>
+      <h1 style="margin-top:22px">Connecting you to <span class="serif">success.</span></h1>
+      <div class="hero-row">
+        <div>
+          <p class="hero-sub">One strategic partner across marketing, AI, premium real estate and global commodities — backed by a network built over years, not months.</p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary">Book a Zoom call
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#divisions" class="btn btn-ghost">Explore services</a>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <div><b>4</b><span>Divisions</span></div>
+          <div><b>Global</b><span>Agent network</span></div>
+          <div><b>Dubai</b><span>Silicon Oasis HQ</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Lead Generation</span><span>AI Automation</span><span>Off-Market Property</span><span>Video Production</span><span>Custom AI</span><span>Wood Pellets & Urea</span><span>Online Advertising</span><span>Supply-Chain Management</span>
+      <span>Lead Generation</span><span>AI Automation</span><span>Off-Market Property</span><span>Video Production</span><span>Custom AI</span><span>Wood Pellets & Urea</span><span>Online Advertising</span><span>Supply-Chain Management</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <span class="eyebrow">About</span>
+        <h2>More than a provider. <span class="serif">Your growth partner.</span></h2>
+        <p class="muted">KLB Solutions brings together the knowledge, network and innovation needed to turn opportunities into results. Our expertise spans marketing, real estate, AI and commodities — and our global connections have earned recognition from publications such as Global Man Magazine.</p>
+        <p class="muted">We believe growth comes from a mix of strategy, networks and execution. Whether you're looking to scale, streamline or explore something new, we pair global reach with solutions built around you — never cookie-cutter.</p>
+        <div class="badge-row">
+          <span class="badge"><i></i>Featured in Global Man Magazine</span>
+          <span class="badge"><i></i>Home of Worldie.ai</span>
+        </div>
+      </div>
+      <div class="about-img reveal">
+        <img src="assets/img/villa-3.jpg" alt="Interior of a modern Marbella villa" loading="lazy">
+        <div class="float"><q>Strategy, networks and execution — in one partner.</q></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="divisions" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">What we do</span><h2 style="margin-top:18px">Four divisions.<br><span class="serif">One network.</span></h2></div>
+        <p class="muted">Each division runs on the same principle: trusted relationships, tailored strategy and hands-on delivery from first call to final result.</p>
+      </div>
+      <div class="bento">
+        <a href="#contact" class="tile t-mkt reveal">
+          <span class="num">01 — Marketing</span>
+          <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          <h3>Transforming your marketing, <span class="serif">transforming your business.</span></h3>
+          <p>A team that has worked alongside world-renowned brands, building B2B and B2C strategies that cut through the noise.</p>
+          <div class="chips"><span class="chip">Lead generation</span><span class="chip">AI marketing</span><span class="chip">Video</span><span class="chip">Online ads</span></div>
+        </a>
+        <a href="#ai" class="tile t-ai img reveal">
+          <img src="assets/img/marketing-brain.png" alt="" loading="lazy">
+          <span class="num">02 — AI Solutions</span>
+          <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          <h3>Worldie.ai — <span class="serif">AI that works for you.</span></h3>
+          <p>Automation, consulting and custom AI that make operations faster, leaner and smarter.</p>
+          <div class="chips"><span class="chip">Automation</span><span class="chip">Chatbots</span><span class="chip">Consulting</span></div>
+        </a>
+        <a href="#real-estate" class="tile t-re img reveal">
+          <img src="assets/img/marbella-aerial-2.jpg" alt="" loading="lazy">
+          <span class="num">03 — Real Estate</span>
+          <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          <h3>Off-market access <span class="serif">for discerning buyers.</span></h3>
+          <p>Premium residential and commercial property worldwide, sourced through trusted local agents.</p>
+          <div class="chips"><span class="chip">Villas</span><span class="chip">Apartments</span><span class="chip">UK Luxury</span></div>
+        </a>
+        <a href="#commodities" class="tile t-com reveal">
+          <span class="num">04 — Commodities</span>
+          <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+          <h3>Global supply, <span class="serif">managed end-to-end.</span></h3>
+          <p>Introductions, due diligence and oversight across energy and agricultural commodities.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai" class="ai-band">
+    <div class="wrap ai-grid">
+      <div class="reveal">
+        <span class="eyebrow">AI Division · Worldie.ai</span>
+        <h2>Pioneering AI for <span class="serif">efficiency and growth.</span></h2>
+        <p class="muted">Worldie.ai is KLB Solutions' AI branch. We look deep into how your business runs, find where automation pays off, and build the tools to get you there — for entrepreneurs, SMEs and larger organisations alike.</p>
+        <div class="feature-list">
+          <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            <div><h4>AI Automation</h4><p>Customer-service chatbots to internal workflow optimisation — efficiency at every step.</p></div></div>
+          <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <div><h4>AI Consulting</h4><p>Specialist guidance on where and how to integrate AI into your operations.</p></div></div>
+          <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span>
+            <div><h4>Custom AI</h4><p>Bespoke solutions built around your challenges, keeping you ahead of the curve.</p></div></div>
+        </div>
+        <div style="margin-top:28px"><a href="https://www.worldie.ai" target="_blank" rel="noopener" class="btn btn-ghost">Visit Worldie.ai
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+      </div>
+      <div class="ai-visual reveal">
+        <div class="ring"></div>
+        <img src="assets/img/worldie-bot.png" alt="Worldie.ai assistant" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="real-estate">
+    <div class="wrap">
+      <div class="re-head reveal">
+        <div><span class="eyebrow">Real Estate</span>
+          <h2 style="margin-top:18px">Finding your perfect property. <span class="serif">Building your perfect future.</span></h2></div>
+        <p class="muted">We serve high-net-worth buyers seeking exceptional opportunities. Through relationships with established local agents, we uncover properties that are often off-market — then negotiate, advise and stay by your side long after the keys change hands.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="gallery reveal" tabindex="0" aria-label="Property gallery">
+        <figure><img src="assets/img/villa-1.jpg" alt="Villa kitchen with glass wine wall" loading="lazy"><figcaption>Marbella · Villa</figcaption></figure>
+        <figure><img src="assets/img/villa-2.jpg" alt="Villa interior" loading="lazy"><figcaption>Marbella · Villa</figcaption></figure>
+        <figure><img src="assets/img/marbella-aerial.jpg" alt="Aerial view of Marbella villa" loading="lazy"><figcaption>Marbella · Aerial</figcaption></figure>
+        <figure><img src="assets/img/villa-4.jpg" alt="Villa interior" loading="lazy"><figcaption>Marbella · Villa</figcaption></figure>
+        <figure><img src="assets/img/villa-5.jpg" alt="Villa interior" loading="lazy"><figcaption>Marbella · Villa</figcaption></figure>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal"><b>01</b><h4>Exclusive access</h4><p>Off-market listings unavailable to the wider public.</p></div>
+        <div class="pillar reveal"><b>02</b><h4>Expert negotiation</h4><p>We secure the best possible deal on your behalf.</p></div>
+        <div class="pillar reveal"><b>03</b><h4>Market insight</h4><p>Detailed local intelligence in every key market.</p></div>
+        <div class="pillar reveal"><b>04</b><h4>After-purchase support</h4><p>Resources and connections to maximise your investment.</p></div>
+      </div>
+      <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>For discretion, full property details are shared on request only.</p>
+    </div>
+  </section>
+
+  <section id="commodities" style="padding-top:40px">
+    <div class="wrap com-wrap">
+      <div class="reveal">
+        <span class="eyebrow">Commodities</span>
+        <h2>We don't just supply. <span class="serif">We manage.</span></h2>
+        <p class="muted">Rather than acting as a direct seller, our commodities division connects clients with trusted producers and manages the process — ensuring efficiency, transparency and competitive pricing at every stage.</p>
+        <div class="steps">
+          <span class="chip"><b>1</b>Introductions</span><span class="chip"><b>2</b>Due diligence</span><span class="chip"><b>3</b>Negotiation</span><span class="chip"><b>4</b>Oversight</span>
+        </div>
+      </div>
+      <div class="com-list reveal">
+        <div class="com-item"><span class="k">C</span><h4>Coal</h4><p>Reliable producers and the right product at competitive prices.</p></div>
+        <div class="com-item"><span class="k">W</span><h4>Wood Pellets</h4><p>High-quality, sustainable fuel from leading global producers.</p></div>
+        <div class="com-item"><span class="k">U</span><h4>Urea</h4><p>Consistent agricultural supply at market-competitive rates.</p></div>
+        <div class="com-item"><span class="k">O</span><h4>Oil, Fuel & Pet Coke</h4><p>Established producers of crude, refined fuels and petroleum coke.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:40px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">How we work</span><h2 style="margin-top:18px">From first call <span class="serif">to results.</span></h2></div>
+      </div>
+      <div class="process">
+        <div class="step reveal"><h4>Discovery call</h4><p>A Zoom call to understand exactly what you need.</p></div>
+        <div class="step reveal"><h4>Tailored strategy</h4><p>A plan built for your goals — no templates.</p></div>
+        <div class="step reveal"><h4>Network & execution</h4><p>We bring in the right partners and run the process.</p></div>
+        <div class="step reveal"><h4>Ongoing partnership</h4><p>We stay involved to compound the results.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="insights" style="padding-top:40px">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">Insights</span><h2 style="margin-top:18px">From <span class="serif">the blog.</span></h2></div>
+        <a href="https://www.klb-solutions.com/blog" class="btn btn-ghost">All articles</a>
+      </div>
+      <div class="posts">
+        <a href="https://www.klb-solutions.com/blog" class="post reveal">
+          <h3>Supply Chain Diversification: <span class="serif">a boost for ASEAN economies.</span></h3>
+          <div class="meta"><span>Adam Kelbie</span><span>10 Feb 2023</span></div>
+        </a>
+        <a href="https://www.klb-solutions.com/blog" class="post reveal">
+          <h3>Breaking Out of Your Lane: <span class="serif">why staying put is overrated.</span></h3>
+          <div class="meta"><span>Adam Kelbie</span><span>7 Feb 2023</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:40px">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h2>Let's <span class="serif">connect.</span></h2>
+            <p class="muted">Tell us what you need and we'll set up a Zoom call at a time that works for you — discuss your goals, ask questions and see how we can help.</p>
+            <div class="info">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Silicon Oasis, Dubai, United Arab Emirates</div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>Consultations by Zoom, worldwide</div>
+            </div>
+          </div>
+          <form id="contact-form" novalidate>
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization"></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field full"><label for="f-int">I'm interested in</label>
+              <select id="f-int" name="interest">
+                <option>Marketing</option><option>AI Solutions (Worldie.ai)</option><option>Real Estate — Villa</option><option>Real Estate — Apartment</option><option>Real Estate — UK Luxury</option><option>Commodities</option><option>Something else</option>
+              </select></div>
+            <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="A few lines about your goals…"></textarea></div>
+            <button type="submit" class="btn btn-primary">Request a Zoom call
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <div class="form-ok" id="form-ok">Thank you — we'll be in touch shortly to schedule your call.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <svg viewBox="0 0 120 40" fill="none" style="height:30px;width:auto" aria-label="KLB">
+          <rect x="2" y="3" width="6" height="34" fill="#fff"/>
+          <path d="M30 3 L13 20 L30 37" stroke="#54b857" stroke-width="6.5" stroke-linejoin="round" fill="none"/>
+          <path d="M44 3 V37 H66" stroke="#fff" stroke-width="6" fill="none"/>
+          <path d="M76 3 H101 a8.5 8.5 0 0 1 0 17 H76 Z M76 20 H103 a8.5 8.5 0 0 1 0 17 H76 Z" stroke="#fff" stroke-width="6" fill="none"/>
+        </svg>
+        <p class="big-tag">Connecting you<br>to success.</p>
+      </div>
+      <div><h5>Services</h5><ul><li><a href="#divisions">Marketing</a></li><li><a href="#ai">AI Solutions</a></li><li><a href="#real-estate">Real Estate</a></li><li><a href="#commodities">Commodities</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="#about">About</a></li><li><a href="#insights">Blog</a></li><li><a href="https://www.worldie.ai" target="_blank" rel="noopener">Worldie.ai</a></li><li><a href="https://www.klb-solutions.com/privacy">Privacy</a></li></ul></div>
+      <div><h5>Office</h5><ul><li>Silicon Oasis</li><li>Dubai, UAE</li><li><a href="#contact">Book a Zoom →</a></li></ul></div>
+    </div>
+    <div class="foot-bot"><span>© <span id="yr"></span> KLB Solutions FZCO. All rights reserved.</span><span>Marketing · AI · Real Estate · Commodities</span></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('nav').classList.remove('open')));
+// Placeholder submit — wire to a real endpoint (Formspree, CRM, n8n webhook) before launch
+document.getElementById('contact-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target;
+  if (!f.reportValidity()) return;
+  document.getElementById('form-ok').style.display = 'block';
+  f.reset();
+});
+</script>
+</body>
+</html>
